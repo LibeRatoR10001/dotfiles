@@ -1,0 +1,31 @@
+#RUST
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = [ "rust-analyzer" ]
+
+[language-server.rust-analyzer]
+command = "rustup"
+args = [ "run", "stable", "rust-analyzer" ]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+
+
+#C/C++
+
+
+
+
+#Python
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
