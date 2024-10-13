@@ -114,4 +114,17 @@ if vim.g.neovide then
   -- 刷新率
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_refresh_rate_idle = 5
+  -- 字体
+  vim.o.guifont = "ComicMonoNF,Source Han Sans CN:h12"
+  -- Gammar 对比度 仿Alacritty
+  -- vim.g.neovide_text_gamma = 0.8
+  -- vim.g.neovide_text_contrast = 0.1
+  -- 退出neovim而不是neovid
+  vim.g.neovide_detach_on_quit = 'always_quit'
+
+  -- 光标设置
+  -- 闪烁
+  vim.g.neovide_cursor_smooth_blink = true
+  -- 粒子
+  vim.g.neovide_cursor_vfx_mode = "railgun"
 end
