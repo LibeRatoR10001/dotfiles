@@ -1,0 +1,258 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "assistant": {
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-3-5-sonnet-20240620"
+        },
+        "version": "2"
+    },
+    "theme": {
+        "mode": "dark",
+        "light": "Catppuccin Latte",
+        "dark": "One Dark Pro"
+    },
+    // VIM
+    "vim_mode": true,
+    "vim": {
+        "use_system_clipboard": "always",
+        "use_multiline_find": true,
+        "use_smartcase_find": true
+    },
+    "relative_line_numbers": true,
+    "command_aliases": {
+        "W": "w",
+        "Wq": "wq",
+        "Q": "q"
+    },
+
+    "scroll_beyond_last_line": "off",
+    "ui_font_size": 16,
+    "ui_font_family": "MonaspiceNe Nerd Font Mono",
+    "buffer_font_size": 16,
+    "buffer_font_family": "ComicMonoNF",
+    "buffer_font_weight": 400,
+    // 隐藏标签栏中的导航历史按钮
+    "tab_bar": {
+        "show_nav_history_buttons": false
+    },
+    // 启用文件图标显示，在标签页中显示文件类型对应的图标
+    // 在标签页中显示文件的 Git 状态
+    "tab": {
+        "file_icons": true,
+        "git_status": true
+    },
+    // 内联提示设置
+    "inlay_hints": {
+        "enabled": true,
+        "font_family": "Cascadia code NF"
+    },
+    // 根据缩进级别进行着色
+    "indent_guides": {
+        "coloring": "indent_aware"
+    },
+    // 启用软换行，当行长度超过编辑器宽度时自动换行
+    "soft_wrap": "editor_width",
+    "tab_size": 4,
+    // 启用文件保存时自动格式化功能
+    "format_on_save": "on",
+    // 设置垂直滚动的边距
+    "vertical_scroll_margin": 6,
+    // 编辑器启动时不会自动恢复上次打开的文件或会话
+    "restore_on_startup": "last_workspace",
+    // 禁用在新行继续注释的功能
+    "extend_comment_on_newline": true,
+    // 将特定的文件扩展名与它们对应的文件类型进行关联
+    "file_types": {
+        "C++": ["c", "h", "cpp", "hpp"],
+        "*.md": ["markdown"]
+    },
+    "terminal": {
+        "font_family": "Cascadia Code NF",
+        "shell": {
+            // 依据不同操作系统修改
+            "program": "zsh"
+        },
+        "detect_venv": {
+            "on": {
+                "directories": [".env", "env", ".venv", "venv"],
+                // 依据不同操作系统修改
+                "activate_script": "default"
+            }
+        },
+        "working_directory": "current_project_directory"
+    },
+    // "git": {
+    //   // 启用 Git 集成功能
+    //   "enabled": true,
+    //   // 定期从远程仓库获取最新的更改
+    //   "autoFetch": true,
+    //   // 设置自动获取的时间间隔为 300 秒（5分钟）
+    //   "autoFetchInterval": 300,
+    //   // 当编辑器窗口获得焦点时自动获取最新的 Git 更改
+    //   "autoFetchOnFocus": true,
+    //   // 当编辑器窗口切换时自动获取最新的 Git 更改
+    //   "autoFetchOnWindowChange": true,
+    //   // 在构建项目时自动获取最新的 Git 更改
+    //   "autoFetchOnBuild": true,
+    //   // 在编辑器中显示文件的 Git 状态
+    //   "git_status": true,
+    //   // 在指定的构建事件（如构建、运行、调试）时自动获取最新的Git更改
+    //   "autoFetchOnBuildEvents": [
+    //     "build",
+    //     "run",
+    //     "debug"
+    //   ],
+    //   // 设置在构建事件发生后延迟 1500 毫秒（1.5秒）再进行自动获取
+    //   "autoFetchOnBuildEventsDelay": 1500,
+    //   // 设置在构建后延迟 1500 毫秒（1.5秒）再进行自动获取
+    //   "autoFetchOnBuildDelay": 1500,
+    //   // 在编辑器的行号栏（gutter）中显示 Git 状态，仅显示已跟踪文件的状态
+    //   "git_gutter": "tracked_files",
+    //   // ，在代码行旁边显示最后一次修改该行的提交信息
+    //   "inline_blame": {
+    //     "enabled": false,
+    //     "position": "right"
+    //   }
+    // },
+    "languages": {
+        "C++": {
+            "formatter": {
+                "external": {
+                    "command": "clang-format",
+                    "arguments": [
+                        "-style={BasedOnStyle: Google, IndentWidth: 2}"
+                    ]
+                }
+            }
+        },
+        "Go": {
+            "code_actions_on_format": {
+                "source.organizeImports": true
+            }
+        },
+        "Rust": {
+            "tab_size": 4
+        },
+        "Python": {
+            "tab_size": 4,
+            "formatter": "language_server",
+            "format_on_save": {
+                "external": {
+                    "command": "python",
+                    "arguments": ["-m", "ruff", "format", "-"]
+                }
+            }
+        },
+        "TSX": {
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": [
+                        "--stdin-filepath",
+                        "{buffer_path}",
+                        "--tab-width",
+                        "2"
+                    ]
+                }
+            },
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll.eslint": true
+            }
+        },
+        "JavaScript": {
+            "tab_size": 2,
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": [
+                        "--stdin-filepath",
+                        "{buffer_path}",
+                        "--tab-width",
+                        "2"
+                    ]
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "TypeScript": {
+            "tab_size": 2,
+            "language_servers": ["typescript-language-server", "!vtsls", "..."],
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": [
+                        "--stdin-filepath",
+                        "{buffer_path}",
+                        "--tab-width",
+                        "2"
+                    ]
+                }
+            },
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll.eslint": true
+            }
+        }
+    },
+    "lsp": {
+        "rust-analyzer": {
+            "initialization_options": {
+                "inlayHints": {
+                    "maxLength": null,
+                    "lifetimeElisionHints": {
+                        "enable": "skip_trivial",
+                        "useParameterNames": true
+                    },
+                    "closureReturnTypeHints": {
+                        "enable": "always"
+                    }
+                },
+                "checkOnSave": {
+                    // rust-analyzer.check.command (default: "check")
+                    "command": "clippy"
+                }
+            }
+        },
+        "pyright": {
+            "settings": {
+                "python.analysis": {
+                    "diagnosticMode": "workspace",
+                    "typeCheckingMode": "strict"
+                },
+                "python": {}
+            }
+        },
+        "pylsp": {
+            "settings": {
+                "plugins": {
+                    "rope_autoimport": {
+                        "enabled": true
+                    },
+                    "pycodestyle": {
+                        "enabled": true
+                    }
+                }
+            }
+        },
+        "eslint": {
+            "settings": {
+                "codeActionOnSave": {
+                    "rules": ["import/order"]
+                }
+            }
+        }
+    }
+}

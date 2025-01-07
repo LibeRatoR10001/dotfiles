@@ -1,0 +1,7 @@
+fork = true
+neovim-bin = "/usr/local/bin/lvim"
+
+[font]
+size = 12
+#normal = ["MonaspiceNe NFM"]
+normal = ["ComicMonoNF"]

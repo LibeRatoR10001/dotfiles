@@ -1,0 +1,128 @@
+#Import
+import = [
+    "~/.config/alacritty/themes/themes/blood_moon.toml"
+]
+
+[shell]
+program = "/bin/zsh" 
+args=["-l"]
+
+##########
+# WINDOW #
+##########
+
+[window]
+dimensions = { columns = 96, lines = 26 }
+
+padding = { x = 0, y = 0 }
+
+dynamic_padding = false
+
+decorations = "Full"
+
+opacity = 0.7
+
+blur = true
+
+startup_mode = "Windowed"
+
+dynamic_title = true
+
+class = { instance = "Alacritty", general = "Alacritty" }
+
+decorations_theme_variant = "None"
+
+resize_increments = false
+
+option_as_alt = "None"
+
+#############
+# SCROLLING #
+#############
+
+[scrolling]
+
+history = 10000
+
+multiplier = 3
+
+########
+# FONT #
+########
+
+[font]
+
+normal = { family = "MonaspiceNe Nerd Font Mono", style = "Regular" }
+bold = { family = "Monaspace Neon Var", style = "Bold" }
+italic = { family = "Monaspace Neon Var", style = "italic" }
+#blod_italic = { family = "Monaspace Neon Var", style = "Bold Italic" }
+
+size = 16
+
+offset = { x = 0, y = 0 }
+
+glyph_offset = { x = 0, y = 0 }
+
+[colors]
+
+transparent_background_colors = true
+
+draw_bold_text_with_bright_colors = true
+
+# [colors.bright]
+# black = "0x666666"
+# blue = "0x7aa6da"
+# cyan = "0x54ced6"
+# green = "0x9ec400"
+# magenta = "0xb77ee0"
+# red = "0xff3334"
+# white = "0xffffff"
+# yellow = "0xe7c547"
+
+[colors.cursor]
+cursor = "0xffffff"
+text = "0x000000"
+
+[colors.dim]
+black = "0x333333"
+blue = "0x6699cc"
+cyan = "0x66cccc"
+green = "0x99cc99"
+magenta = "0xcc99cc"
+red = "0xf2777a"
+white = "0xdddddd"
+yellow = "0xffcc66"
+
+# [colors.normal]
+# black = "0x000000"
+# blue = "0x7aa6da"
+# cyan = "0x70c0ba"
+# green = "0xb9ca4a"
+# magenta = "0xc397d8"
+# red = "0xd54e53"
+# white = "0xffffff"
+# yellow = "0xe6c547"
+#
+# [colors.primary]
+# background = "0x000000"
+# foreground = "0xeaeaea"
+
+[bell]
+
+[selection]
+
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[cursor]
+
+style = { shape = "Underline", blinking = "on" }
+
+vi_mode_style = { shape = "Block", blinking = "on" }
+
+[mouse]
+bindings= []
+
+[env]
+TERM = "xterm-256color"
+
+

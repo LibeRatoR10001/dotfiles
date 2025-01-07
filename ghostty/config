@@ -1,0 +1,5 @@
+config-file = ./keybind
+theme = catppuccin-mocha
+font-family = "MonaspiceNe Nerd Font Mono"
+background-opacity = 0.7
+window-decoration = true

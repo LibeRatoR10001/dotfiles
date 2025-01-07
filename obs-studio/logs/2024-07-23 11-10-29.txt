@@ -1,0 +1,133 @@
+11:10:29.085: Platform: Wayland
+11:10:29.085: CPU Name: AMD Ryzen 5 4600H with Radeon Graphics
+11:10:29.085: CPU Speed: 1382.917MHz
+11:10:29.086: Physical Cores: 6, Logical Cores: 12
+11:10:29.086: Physical Memory: 7306MB Total, 3086MB Free
+11:10:29.086: Kernel Version: Linux 6.9.10-arch1-1
+11:10:29.086: Distribution: "Arch Linux" Unknown
+11:10:29.086: Desktop Environment: Hyprland ()
+11:10:29.086: Session Type: wayland
+11:10:29.089: Qt Version: 6.7.2 (runtime), 6.7.1 (compiled)
+11:10:29.089: Portable mode: false
+11:10:29.165: OBS 30.1.2-2 (linux)
+11:10:29.165: ---------------------------------
+11:10:29.165: ---------------------------------
+11:10:29.165: audio settings reset:
+11:10:29.165: 	samples per sec: 48000
+11:10:29.165: 	speakers:        2
+11:10:29.165: 	max buffering:   960 milliseconds
+11:10:29.165: 	buffering type:  dynamically increasing
+11:10:29.168: ---------------------------------
+11:10:29.168: Initializing OpenGL...
+11:10:29.168: Using EGL/Wayland
+11:10:29.277: Initialized EGL 1.5
+11:10:29.304: Loading up OpenGL on adapter AMD AMD Radeon Graphics (radeonsi, renoir, LLVM 18.1.8, DRM 3.57, 6.9.10-arch1-1)
+11:10:29.304: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.1.4-arch1.2, shading language 4.60
+11:10:29.356: ---------------------------------
+11:10:29.356: video settings reset:
+11:10:29.356: 	base resolution:   1920x1080
+11:10:29.356: 	output resolution: 1920x1080
+11:10:29.356: 	downscale filter:  Bicubic
+11:10:29.356: 	fps:               60/1
+11:10:29.356: 	format:            NV12
+11:10:29.356: 	YUV mode:          sRGB/Partial
+11:10:29.360: NV12 texture support enabled
+11:10:29.360: P010 texture support not available
+11:10:29.368: Audio monitoring device:
+11:10:29.368: 	name: 默认
+11:10:29.368: 	id: default
+11:10:29.368: ---------------------------------
+11:10:29.389: Failed to load 'en-US' text for module: 'decklink-captions.so'
+11:10:29.409: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+11:10:29.426: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+11:10:29.426: Failed to initialize module 'decklink.so'
+11:10:29.714: [pipewire] Available captures:
+11:10:29.714: [pipewire]     - Desktop capture
+11:10:29.761: v4l2loopback not installed, virtual camera disabled
+11:10:29.835: NVENC supported
+11:10:29.835: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+11:10:29.835: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+11:10:29.835: FFmpeg VAAPI H264 encoding not supported
+11:10:29.836: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+11:10:29.836: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+11:10:29.836: FFmpeg VAAPI AV1 encoding not supported
+11:10:29.836: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+11:10:29.836: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+11:10:29.836: FFmpeg VAAPI HEVC encoding not supported
+11:10:30.081: ---------------------------------
+11:10:30.081:   Loaded Modules:
+11:10:30.081:     text-freetype2.so
+11:10:30.081:     rtmp-services.so
+11:10:30.081:     obs-x264.so
+11:10:30.081:     obs-webrtc.so
+11:10:30.081:     obs-vst.so
+11:10:30.081:     obs-transitions.so
+11:10:30.081:     obs-qsv11.so
+11:10:30.081:     obs-outputs.so
+11:10:30.081:     obs-libfdk.so
+11:10:30.081:     obs-filters.so
+11:10:30.081:     obs-ffmpeg.so
+11:10:30.081:     linux-v4l2.so
+11:10:30.081:     linux-pulseaudio.so
+11:10:30.081:     linux-pipewire.so
+11:10:30.081:     linux-jack.so
+11:10:30.081:     linux-capture.so
+11:10:30.081:     linux-alsa.so
+11:10:30.081:     image-source.so
+11:10:30.081:     frontend-tools.so
+11:10:30.081:     decklink-output-ui.so
+11:10:30.081:     decklink-captions.so
+11:10:30.081: ---------------------------------
+11:10:30.081: ==== Startup complete ===============================================
+11:10:30.108: All scene data cleared
+11:10:30.108: ------------------------------------------------
+11:10:30.113: pulse-input: Server name: 'PulseAudio (on PipeWire 1.2.1) 15.0.0'
+11:10:30.114: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+11:10:30.114: pulse-input: Started recording from 'alsa_output.pci-0000_06_00.6.analog-stereo.monitor' (default)
+11:10:30.114: [Loaded global audio device]: '桌面音频'
+11:10:30.115: pulse-input: Server name: 'PulseAudio (on PipeWire 1.2.1) 15.0.0'
+11:10:30.115: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+11:10:30.116: pulse-input: Started recording from 'alsa_input.pci-0000_06_00.6.analog-stereo' (default)
+11:10:30.116: [Loaded global audio device]: '麦克风/Aux'
+11:10:30.116: PipeWire initialized
+11:10:30.116: Source ID 'pipewire-window-capture-source' not found
+11:10:30.117: Failed to create source '窗口采集(PipeWire)'!
+11:10:30.118: Switched to scene '录制'
+11:10:30.118: ------------------------------------------------
+11:10:30.118: Loaded scenes:
+11:10:30.118: - scene '录制':
+11:10:30.118:     - source: '屏幕采集(PipeWire)' (pipewire-desktop-capture-source)
+11:10:30.118:     - source: '窗口采集(PipeWire)' (pipewire-window-capture-source)
+11:10:30.118: ------------------------------------------------
+11:10:30.306: [pipewire] Screencast session created
+11:10:30.391: [pipewire] Asking for desktop
+11:10:30.411: [pipewire] desktop selected, setting up screencast
+11:10:30.424: [pipewire] Server version: 1.2.1
+11:10:30.424: [pipewire] Library version: 1.2.1
+11:10:30.424: [pipewire] Header version: 1.0.7
+11:10:30.424: [pipewire] Created stream 0x563f541439a0
+11:10:30.425: [pipewire] Stream 0x563f541439a0 state: "connecting" (error: none)
+11:10:30.447: [pipewire] Playing stream 0x563f541439a0
+11:10:30.449: [pipewire] Stream 0x563f541439a0 state: "paused" (error: none)
+11:10:30.450: [pipewire] Negotiated format:
+11:10:30.450: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+11:10:30.450: [pipewire]     Modifier: 0x0
+11:10:30.450: [pipewire]     Size: 1920x1080
+11:10:30.450: [pipewire]     Framerate: 0/1
+11:10:30.453: [pipewire] Negotiated format:
+11:10:30.453: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+11:10:30.453: [pipewire]     Modifier: 0x20000044051ba01
+11:10:30.453: [pipewire]     Size: 1920x1080
+11:10:30.453: [pipewire]     Framerate: 0/1
+11:10:30.455: [pipewire] Stream 0x563f541439a0 state: "streaming" (error: none)
+11:10:30.681: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: 桌面音频)
+11:10:30.681: 
+11:10:33.143: ==== Shutting down ==================================================
+11:10:33.153: pulse-input: Stopped recording from 'alsa_output.pci-0000_06_00.6.analog-stereo.monitor'
+11:10:33.153: pulse-input: Got 121 packets with 145200 frames
+11:10:33.153: pulse-input: Stopped recording from 'alsa_input.pci-0000_06_00.6.analog-stereo'
+11:10:33.153: pulse-input: Got 120 packets with 144000 frames
+11:10:33.154: [pipewire] Stream 0x563f541439a0 state: "paused" (error: none)
+11:10:33.154: [pipewire] Stream 0x563f541439a0 state: "unconnected" (error: none)
+11:10:33.183: All scene data cleared
+11:10:33.183: ------------------------------------------------

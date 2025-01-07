@@ -1,0 +1,8 @@
+inherits = "tokyonight_storm"
+
+"ui.background" = { fg = "foreground" }
+"ui.cursorline.primary" = {}
+
+[palette]
+background_highlight = "#4a527a"
+foreground_gutter = "#5e6793"

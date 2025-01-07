@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "yazi-rs/plugins:full-border", rev = "591db0e" }, { use = "yazi-rs/plugins:max-preview", rev = "ad52adf" }, { use = "yazi-rs/plugins:chmod", rev = "ad52adf" }, { use = "Rolv-Apneseth/starship", rev = "9c37d37" }]
+
+[flavor]
+deps = []
