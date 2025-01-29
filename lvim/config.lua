@@ -80,6 +80,10 @@ lvim.plugins = {
 			"rcarriga/nvim-notify",
 		},
 	},
+	-- latex
+	{
+		"vigoux/ltex-ls.nvim",
+	},
 	{
 		"lervag/vimtex",
 		lazy = false, -- we don't want to lazy load VimTeX
@@ -133,6 +137,14 @@ lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(serve
 	return server ~= "ltex"
 end, lvim.lsp.automatic_configuration.skipped_servers)
 lvim.builtin.treesitter.highlight.disable("latex")
+lvim.builtin.treesitter.ignore_install = { "latex" }
+vim.api.nvim_create_autocmd("Filetype", {
+	pattern = "tex",
+	callback = function()
+		vim.cmd("syntax enable")
+		vim.cmd("set syntax=tex")
+	end,
+})
 
 -- formatter linter
 local farmatters = require("lvim.lsp.null-ls.formatters")
