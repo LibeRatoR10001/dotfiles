@@ -29,9 +29,9 @@ compinit
 # End of lines added by compinstall
 
 # environment
-source ./.zsh_env
+source ~/.zsh_env
 
 # alias
-source ./.zsh_alias
+source ~/.zsh_alias
 
 eval "$(starship init zsh)"

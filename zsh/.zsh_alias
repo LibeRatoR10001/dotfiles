@@ -1,11 +1,9 @@
 # alias
 alias md="mkdir -p"
 alias rd="rmdir"
-alias ~="cd"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ll="ls -al"
-alias la="ls -a"
+alias ls="ls --color"
+alias ll="ls -l"
+alias la="ls -al"
 
 # yazi
 function yy() {
