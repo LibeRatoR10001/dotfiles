@@ -5,6 +5,9 @@ alias ls="ls --color"
 alias ll="ls -l"
 alias la="ls -al"
 
+# git
+alias lg="lazygit"
+
 # yazi
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
