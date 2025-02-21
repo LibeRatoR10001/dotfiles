@@ -5,6 +5,9 @@
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
 -- vim
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 -- keybind
 lvim.lsp.buffer_mappings.normal_mode["K"] = nil
@@ -41,6 +44,11 @@ lvim.plugins = {
 		},
 		opts = {
 			arg = "lc",
+			cn = { -- leetcode.cn
+				enabled = true,
+				translator = true,
+				translate_problems = true,
+			},
 		},
 	},
 	{ "mg979/vim-visual-multi" },
@@ -169,6 +177,12 @@ farmatters.setup({
 		command = "stylua",
 		filetypes = { "lua" },
 	},
+	{
+		command = "cmake-format",
+		filetypes = {
+			"CMakeLists",
+		},
+	},
 })
 linters.setup({})
 code_actions.setup({
@@ -195,6 +209,9 @@ require("noice").setup({
 		lsp_doc_border = false, -- add a border to hover docs and signature help
 	},
 })
+
+-- 禁用
+lvim.builtin.treesitter.ignore_install = { "kdl" }
 
 -- noevide 配置
 if vim.g.neovide then

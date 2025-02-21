@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "features": {
+        "edit_prediction_provider": "zed"
+    },
     "assistant": {
         "default_model": {
             "provider": "zed.dev",
@@ -17,7 +20,7 @@
     "theme": {
         "mode": "dark",
         "light": "Catppuccin Latte",
-        "dark": "One Dark Pro"
+        "dark": "Tokyo Night Storm"
     },
     // VIM
     "vim_mode": true,
@@ -34,11 +37,24 @@
     },
 
     "scroll_beyond_last_line": "off",
-    "ui_font_size": 16,
-    "ui_font_family": "MonaspiceNe Nerd Font Mono",
-    "buffer_font_size": 16,
-    "buffer_font_family": "ComicMonoNF",
-    "buffer_font_weight": 400,
+    "ui_font_size": 18,
+    "ui_font_family": "ComicMonoNF",
+    "buffer_font_size": 18,
+    "buffer_font_family": "Monaspace Neon",
+    "buffer_font_weight": 500,
+    "buffer_font_features": {
+        "calt": true,
+        "ss01": true,
+        "ss02": true,
+        "ss03": true,
+        "ss04": true,
+        "ss05": true,
+        "ss06": true,
+        "ss07": true,
+        "ss08": true,
+        "ss09": true,
+        "liga": true
+    },
     // 隐藏标签栏中的导航历史按钮
     "tab_bar": {
         "show_nav_history_buttons": false
