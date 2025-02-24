@@ -1,10 +1,9 @@
 [opener]
 edit = [
-    { run = 'lvim "$@"', block = true },
     { run = 'nvim "$@"', block = true },
-    { run = 'vim "$@"', block = true },
-    { run = 'helix "$@"', block = true },
+    { run = 'lvim "$@"', block = true },
     { run = 'neovide "$@"', block = true},
+    { run = 'vim "$@"', block = true },
 ]
 play = [
     { run = 'mpv "$@"', orphan = true, for = "unix" },

@@ -56,15 +56,6 @@ lvim.plugins = {
 		"mrjones2014/nvim-ts-rainbow",
 	},
 	{
-		"ellisonleao/glow.nvim",
-		config = true,
-		cmd = "Glow",
-		require("glow").setup({
-			style = "dark",
-			width = 120,
-		}),
-	},
-	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
