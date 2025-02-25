@@ -56,5 +56,7 @@ require("lazy").setup({
     require("plugin.Other.vimtex"),
     -- markdown
     require("plugin.Other.markdown"),
+    -- leetcode
+    require("plugin.Other.leetcode"),
   },
 })
