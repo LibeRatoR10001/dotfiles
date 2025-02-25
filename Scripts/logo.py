@@ -1,6 +1,4 @@
 #!/usr/bin/python
-# 保存为 show_logo.py 后执行：python3 show_logo.py
-
 import sys
 
 # 定义颜色映射 (RGB 格式)
@@ -70,8 +68,8 @@ def print_colored_art():
                     prev_color = None
                 colored_line.append(char)
 
-        if prev_color is not None:
-            colored_line.append(RESET)
+        # if prev_color is not None:
+        #     colored_line.append(RESET)
 
         print("".join(colored_line))
 

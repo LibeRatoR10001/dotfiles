@@ -21,7 +21,7 @@ require("lazy").setup({
     -- which-key
     require("plugin.Editor.which-key"),
     -- explorer
-    -- require("plugin.Editor.neo-tree"),
+    require("plugin.Editor.neo-tree"),
     -- flash
     -- require("plugin.Editor.flash"),
     -- gitsigns

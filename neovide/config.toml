@@ -1,7 +1,11 @@
 fork = true
-neovim-bin = "/usr/local/bin/lvim"
+neovim-bin = "/usr/bin/nvim"
 
 [font]
-size = 12
-#normal = ["MonaspiceNe NFM"]
-normal = ["ComicMonoNF"]
+size = 16
+normal = ["MonaspiceNe Nerd Font Mono"]
+bold_italic = ["MonaspiceRn Nerd Font Mono"]
+
+[font.features]
+"MonaspiceNe Nerd Font Mono" = ["+calt", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07", "+ss08", "+ss09", "+liga"]
+"MonaspiceRn Nerd Font Mono" = ["+calt", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07", "+ss08", "+ss09", "+liga"]

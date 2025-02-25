@@ -47,18 +47,32 @@ vim.o.undofile = true
 
 -- noevide 配置
 if vim.g.neovide then
+  -- 标题栏颜色 only windows
+  vim.g.neovide_title_background_color =
+    string.format("%x", vim.api.nvim_get_hl(0, { id = vim.api.nvim_get_hl_id_by_name("Normal") }).bg)
+  vim.g.neovide_title_text_color = "white"
+  -- Floating Blur Amount
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+  -- Floating Shadow
+  vim.g.neovide_floating_shadow = true
+  vim.g.neovide_floating_z_height = 10
+  vim.g.neovide_light_angle_degrees = 45
+  vim.g.neovide_light_radius = 5
   -- 透明度
   vim.g.neovide_transparency = 0.8
+  vim.g.neovide_normal_opacity = 0.8
+
   -- 刷新率
   vim.g.neovide_refresh_rate = 60
   vim.g.neovide_refresh_rate_idle = 5
   -- 字体
-  vim.o.guifont = "MonaspiceNe Mono Nerd Font,Source Han Sans CN:h12"
+  -- vim.o.guifont = "ComicMonoNF,Source Han Sans CN:h12"
   -- Gammar 对比度 仿Alacritty
   -- vim.g.neovide_text_gamma = 0.8
   -- vim.g.neovide_text_contrast = 0.1
-  -- 退出neovim而不是neovid
-  vim.g.neovide_detach_on_quit = "always_quit"
+  -- 退出neovim而不是neovide
+  vim.g.neovide_detach_on_quit = "always_detach"
   -- 光标设置
   -- 闪烁
   vim.g.neovide_cursor_smooth_blink = true

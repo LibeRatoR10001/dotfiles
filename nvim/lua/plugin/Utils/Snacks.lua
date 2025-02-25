@@ -1,3 +1,59 @@
+local logo = {
+  "  ███       ███  ",
+  "  ████      ████ ",
+  "  ████     █████ ",
+  " █ ████    █████ ",
+  " ██ ████   █████ ",
+  " ███ ████  █████ ",
+  " ████ ████ ████ ",
+  " █████  ████████ ",
+  " █████   ███████ ",
+  " █████    ██████ ",
+  " █████     █████ ",
+  " ████      ████ ",
+  "  ███       ███  ",
+  "                    ",
+  "  N  E  O  V  I  M  ",
+}
+local logo2 = {
+  "   █  █   ",
+  "   █ ██   ",
+  "   ████   ",
+  "   ██ ███   ",
+  "   █  █   ",
+  "             ",
+  " N E O V I M ",
+}
+
+local function neovim_ascii_section(logos, scale)
+  local section = {}
+  local n
+  if scale == "small" then
+    n = 2
+  elseif scale == "big" then
+    n = 0
+  end
+  local len = #logos
+  for i, line in ipairs(logos) do
+    local str_pos = vim.str_utf_pos(line)
+    local left = string.sub(line, 1, str_pos[i + n])
+    local right = string.sub(line, str_pos[i + n] + 1)
+
+    if i == len then
+      left = string.sub(line, 1, 10 - n)
+      right = string.sub(line, 11 - n)
+    end
+    section[i] = {
+      text = {
+        { left, hl = "function" },
+        { right, hl = "string" },
+      },
+      align = "center",
+    }
+  end
+  return section
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -7,7 +63,7 @@ return {
     dashboard = {
       enabled = true,
       sections = {
-        { section = "terminal", cmd = "~/Scripts/logo.py", padding = 1, indent = 20, height = 16 },
+        neovim_ascii_section(logo, "big"),
         { section = "keys", gap = 1, padding = 1 },
         { section = "startup" },
       },
@@ -18,8 +74,8 @@ return {
     notifier = {
       enabled = true,
       timeout = 3000,
+      picker = { enabled = true },
     },
-    picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
