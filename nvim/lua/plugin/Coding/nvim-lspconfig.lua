@@ -7,7 +7,8 @@ return {
       clangd = {
         cmd = {
           "clangd",
-          "--header-insertion=never",
+          -- "--header-insertion=never",
+          "--clang-tidy",
           "--query-driver=clang",
           "--all-scopes-completion",
           "--completion-style=detailed",
@@ -48,19 +49,48 @@ return {
         cmd = { "pyright-langserver", "--stdio" },
         filetypes = { "python" },
         settings = {
+          pyright = {
+            disableOrganizeImports = true,
+          },
           python = {
             analysis = {
-              autoSearchPaths = true,
-              diagnosticMode = "workspace",
-              useLibraryCodeForTypes = true,
+              -- autoSearchPaths = true,
+              -- diagnosticMode = "workspace",
+              -- useLibraryCodeForTypes = true,
+              ignore = { "*" },
             },
           },
         },
       },
+      -- ruff = {
+      --   cmd = { "ruff", "check" },
+      --   filetypes = { "python" },
+      -- },
       rust_analyzer = {
         completion = {
           capable = {
             snippets = "add_parenthesis",
+          },
+        },
+        on_attach = function(client, bufnr)
+          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        end,
+        settings = {
+          ["rust-analyzer"] = {
+            imports = {
+              granularity = {
+                group = "module",
+              },
+              prefix = "self",
+            },
+            cargo = {
+              buildScripts = {
+                enable = true,
+              },
+            },
+            procMacro = {
+              enable = true,
+            },
           },
         },
       },

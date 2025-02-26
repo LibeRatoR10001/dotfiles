@@ -26,7 +26,13 @@ return {
       go = { "gofmt" },
       lua = { "stylua" },
       -- Conform will run multiple formatters sequentially
-      python = { "black" },
+      python = { -- To fix auto-fixable lint errors.
+        "ruff_fix",
+        -- To run the Ruff formatter.
+        "ruff_format",
+        -- To organize the imports.
+        "ruff_organize_imports",
+      },
       -- You can customize some of the format options for the filetype (:help conform.format)
       rust = { "rustfmt", lsp_format = "fallback" },
       -- Conform will run the first available formatter

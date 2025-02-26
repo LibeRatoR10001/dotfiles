@@ -5,7 +5,7 @@ return {
   opts = {
     keymap = {
       preset = "none",
-      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-e>"] = { "show", "show_documentation", "hide_documentation" },
       ["<CR>"] = { "accept", "fallback" },
 
       ["<S-tab>"] = { "select_prev", "snippet_backward", "fallback" },

@@ -40,6 +40,7 @@ require("lazy").setup({
     -- formatter
     require("plugin.Coding.formatter"),
     -- linter
+    require("plugin.Coding.linter"),
     -- terminal
     require("plugin.Coding.terminal"),
     --========
