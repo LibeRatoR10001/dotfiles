@@ -35,6 +35,8 @@ require("lazy").setup({
     require("plugin.Coding.blink-cmp"),
     -- lspconfig
     require("plugin.Coding.nvim-lspconfig"),
+    -- mason
+    require("plugin.Coding.mason"),
     -- treesitter
     require("plugin.Coding.Treesitter"),
     -- formatter
@@ -57,6 +59,8 @@ require("lazy").setup({
     require("plugin.Other.vimtex"),
     -- markdown
     require("plugin.Other.markdown"),
+    -- flutter
+    require("plugin.Other.flutter"),
     -- leetcode
     require("plugin.Other.leetcode"),
   },

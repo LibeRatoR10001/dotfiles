@@ -79,7 +79,7 @@
   },
   "custom/notification": {
     "tooltip": false,
-    "format": "<span color=\"#fab387\">{icon}</span> {}",
+    "format": "<span color=\"#fab387\">{icon}</span> {text}",
     "format-icons": {
       "notification": "<span foreground=\"#f38ba8\"><sup></sup></span>",
       "none": "",

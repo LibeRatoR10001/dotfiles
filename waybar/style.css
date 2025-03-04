@@ -4,8 +4,8 @@
 * {
     /* all: unset; */
     font-size: 14px;
-    /* font-family: "Comic Mono Nerd Font"; */
-  font-family: "Hug Me Tight";
+    /* font-family: "ComicMonoNF"; */
+  font-family: "Hug Me Tight","LXGW WenKai Mono";
 }
 
 window#waybar {
