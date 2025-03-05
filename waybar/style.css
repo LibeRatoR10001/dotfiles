@@ -4,7 +4,7 @@
 * {
     /* all: unset; */
     font-size: 14px;
-    /* font-family: "ComicMonoNF"; */
+    /* font-family: "ComicMonoNF","LXGW WenKai Mono"; */
   font-family: "Hug Me Tight","LXGW WenKai Mono";
 }
 
@@ -36,6 +36,7 @@ tooltip {
 #custom-xbps,
 #custom-cava,
 #custom-swhkd,
+#custom-checkupdate,
 #custom-hyprland-workspaces,
 #custom-hyprland-active-window,
 #custom-media,

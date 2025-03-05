@@ -2,24 +2,24 @@
   "position": "top",
   "layer": "top",
   "modules-left": [
-    // "custom/hyprland-workspaces",
     // "wlr/workspaces",
     "hyprland/workspaces",
     // "custom/swhkd",
     // "custom/media",
-    "river/tags",
-    // "custom/weather",
+    // "river/tags",
     // "custom/xbps"
     "tray",
-    "custom/hyprland-active-window"
+	"custom/checkupdate",
+    "custom/hyprland-active-window",
   ],
   "modules-center": [
-    // "mpd"
     "clock",
+    "mpd",
     // "custom/cava",
     "memory"
   ],
   "modules-right": [
+    "custom/weather",
     "network",
     "pulseaudio",
     "backlight",
@@ -41,6 +41,11 @@
     ],
     "num-tags": 4
   },
+  "custom/checkupdate":{
+	"format":"<span color=\"#66ccff\" size='16000'> </span>{}",
+  	"exec": "checkupdates | wc -l",
+  	"interval": 3600
+  },
   "custom/swhkd": {
     "exec": "cat ~/.config/waybar/swhkd-mode",
     "format": "{}",
@@ -56,13 +61,9 @@
     "max-length": 20,
     "interval": 1
   },
-  "custom/hyprland-workspaces": {
-    "return-type": "json",
-    "exec": "~/.config/hypr/scripts/workspaces.lua"
-  },
   "custom/hyprland-active-window": {
     "exec": "~/.config/hypr/scripts/hyprland-active-window",
-    "max-length": 40,
+	"max-length": 40,
     "interval": 1
   },
   "custom/xbps": {
@@ -72,9 +73,9 @@
     "on-click": "kitty --class xbps,xbps -e doas xbps-install -Su"
   },
   "custom/weather": {
-    "exec": "curl 'https://wttr.in/Ningbo?format=%c%t' &",
+    "exec": "curl 'wttr.in/?format=%c%t' &",
     "interval": 3600,
-    "on-click": "xdg-open https://wttr.in/Ningbo",
+    "on-click": "qutebrowser https://wttr.in/",
     "max-length": 10
   },
   "custom/notification": {
@@ -82,9 +83,9 @@
     "format": "<span color=\"#fab387\">{icon}</span> {text}",
     "format-icons": {
       "notification": "<span foreground=\"#f38ba8\"><sup></sup></span>",
-      "none": "",
+      "none": " ",
       "dnd-notification": "<span foreground=\"#f38ba8\"><sup></sup></span>",
-      "dnd-none": "",
+      "dnd-none": " ",
       "inhibited-notification": "<span foreground=\"#f38ba8\"><sup></sup></span>",
       "inhibited-none": "",
       "dnd-inhibited-notification": "<span foreground=\"#f38ba8\"><sup></sup></span>",
@@ -149,29 +150,29 @@
     "sort-by-number": true
   },
   "mpd": {
-    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
+    "format-disconnected": "Disconnected 󰌸 ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}  Stopped  󰝛 ",
     "title-len": 20,
     "interval": 10,
     "consume-icons": {
       "on": " " // Icon shows only when "consume" is on
     },
     "random-icons": {
-      "off": "<span color='#cdd6f4'></span> ", // Icon grayed out when "random" is off
-      "on": "<span color='#cba6f7'></span> "
+      "off": "<span color='#cdd6f4'> </span> ", // Icon grayed out when "random" is off
+      "on": "<span color='#cba6f7'> </span> "
     },
     "repeat-icons": {
-      "off": "<span color='#cdd6f4'></span> ",
-      "on": "<span color='#cba6f7'></span> "
+      "off": "<span color='#cdd6f4'> </span> ",
+      "on": "<span color='#cba6f7'> </span> "
     },
     "single-icons": {
-      "off": "<span color='#cdd6f4'></span> ",
-      "on": "<span color='#cba6f7'></span> "
+      "off": "<span color='#cdd6f4'> </span> ",
+      "on": "<span color='#cba6f7'> </span> "
     },
     "state-icons": {
       "paused": "",
-      "playing": ""
+      "playing": " "
     },
     "on-scroll-up": "mpc seek +1",
     "on-scroll-down": "mpc seek -1",
@@ -193,7 +194,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "<span size='13000' foreground='#89B4FA'>{icon} </span> {percent}%",
+    "format": "<span size='16000' foreground='#89B4FA'>{icon} </span> {percent}%",
     "format-icons": [
       "",
       ""
@@ -213,13 +214,13 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<span size='13000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
-    "format-warning": "<span size='13000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
-    "format-critical": "<span size='13000' foreground='#f38ba8'>{icon}  </span>{capacity}%",
-    "format-charging": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#f5c2e7'>{icon} </span>{time}",
-    "format-full": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format": "<span size='16000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
+    "format-warning": "<span size='16000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
+    "format-critical": "<span size='16000' foreground='#f38ba8'>{icon}  </span>{capacity}%",
+    "format-charging": "<span size='16000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format-plugged": "<span size='16000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format-alt": "<span size='16000' foreground='#f5c2e7'>{icon} </span>{time}",
+    "format-full": "<span size='16000' foreground='#f5c2e7'>  </span>{capacity}%",
     "format-icons": [
       "",
       "",
@@ -231,17 +232,17 @@
     "interval": 5
   },
   "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'> </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭</span> Disconnected",
+    "format-wifi": "<span size='16000' foreground='#f5e0dc'> </span>{essid}",
+    "format-ethernet": "<span size='16000' foreground='#f5e0dc'>󰤭</span> Disconnected",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>Disconnected",
+    "format-disconnected": "<span size='16000' foreground='#f5e0dc'> </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
     "on-click": "kitty --class nmtui,nmtui --title=nmtui -o remember_window_size=no -o initial_window_width=400 -o initial_window_height=400 -e doas nmtui"
   },
   "pulseaudio": {
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format": "<span size='13000' foreground='#f9e2af'>{icon} </span>{volume}%",
-    "format-muted": "<span size='14000' foreground='#f9e2af'>  </span>Muted",
+    "format": "<span size='16000' foreground='#f9e2af'>{icon} </span>{volume}%",
+    "format-muted": "<span size='16000' foreground='#f9e2af'>  </span>Muted",
     "format-icons": {
       "headphone": "",
       "hands-free": "",

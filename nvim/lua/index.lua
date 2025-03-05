@@ -15,6 +15,8 @@ require("lazy").setup({
     require("plugin.Ui.noice"),
     -- dashboard
     -- require("plugin.Ui.alpha"),
+    -- colorizer
+    require("plugin.Ui.colorizer"),
     ---========
     ---Editor
     ---========
@@ -36,7 +38,7 @@ require("lazy").setup({
     -- lspconfig
     require("plugin.Coding.nvim-lspconfig"),
     -- mason
-    require("plugin.Coding.mason"),
+    -- require("plugin.Coding.mason"),
     -- treesitter
     require("plugin.Coding.Treesitter"),
     -- formatter
