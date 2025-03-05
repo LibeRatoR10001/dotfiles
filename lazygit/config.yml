@@ -1,0 +1,45 @@
+gui:
+  # catppuccin mocha blue theme
+  theme:
+    activeBorderColor:
+      - '#89b4fa'
+      - bold
+    inactiveBorderColor:
+      - '#a6adc8'
+    optionsTextColor:
+      - '#89b4fa'
+    selectedLineBgColor:
+      - '#313244'
+    cherryPickedCommitBgColor:
+      - '#45475a'
+    cherryPickedCommitFgColor:
+      - '#89b4fa'
+    unstagedChangesColor:
+      - '#f38ba8'
+    defaultFgColor:
+      - '#cdd6f4'
+    searchingActiveBorderColor:
+      - '#f9e2af'
+  authorColors:
+  '*': '#b4befe'
+  # use nerd font icon
+  nerdFontsVersion: "3"
+  showDivergenceFromBaseBranch: "arrowAndNumber"
+  filterMode: fuzzy
+git:
+  paging:
+    pager: "delta --dark --paging=never"
+  merging:
+    manualCommit: true
+    # Extra args passed to `git merge`, e.g. --no-ff
+    #args: "--no-ff"
+    #Predefined commit message prefix
+    #branchPrefix: ""
+os:
+  editPreset: "nvim"
+  copyToClipboardCmd: >
+    if [[ "$TERM" =~ ^(screen|tmux) ]]; then
+      printf "\033Ptmux;\033\033]52;c;$(printf {{text}} | base64 -w 0)\a\033\\" > /dev/tty
+    else
+      printf "\033]52;c;$(printf {{text}} | base64 -w 0)\a" > /dev/tty
+    fi
