@@ -4,8 +4,8 @@
 * {
     /* all: unset; */
     font-size: 14px;
-    /* font-family: "ComicMonoNF","LXGW WenKai Mono"; */
-  font-family: "Hug Me Tight","LXGW WenKai Mono";
+    /* font-family: "ComicMonoNF","Maple Mono SC NF"; */
+  font-family: "Hug Me Tight","Maple Mono SC NF";
 }
 
 window#waybar {
@@ -31,6 +31,7 @@ tooltip {
 #backlight,
 #memory,
 #tray,
+#window,
 #custom-weather,
 #custom-github,
 #custom-xbps,
@@ -38,7 +39,6 @@ tooltip {
 #custom-swhkd,
 #custom-checkupdate,
 #custom-hyprland-workspaces,
-#custom-hyprland-active-window,
 #custom-media,
 #custom-notification {
     padding: 4px 10px;
@@ -100,7 +100,7 @@ tooltip {
     transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
-#custom-hyprland-active-window {
+#window {
   color: @base00;
   background: radial-gradient(circle, @base05 0%, @base07 100%);
   background-size: 400% 400%;
@@ -153,7 +153,7 @@ tooltip {
     color: @base07;
 }
 
-#custom-hyprland-active-window,
+#window,
 #custom-media {
   color: @base01;
 }

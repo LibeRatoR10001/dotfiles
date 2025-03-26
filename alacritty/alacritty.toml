@@ -6,20 +6,20 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.bold]
-family = "MonaspiceNe Nerd Font Mono"
-style = "Bold"
+family = "ComicMono NF"
+# style = "Bold"
 
 [font.bold_italic]
-family = "MonaspiceNe Nerd Font Mono"
+family = "MonaspiceRn Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "MonaspiceNe Nerd Font Mono"
+family = "MonaspiceRn Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "MonaspiceNe Nerd Font Mono"
-style = "Regular"
+family = "ComicMono NF"
+# style = "Regular"
 
 [window]
 dimensions = { columns = 96, lines = 26 }

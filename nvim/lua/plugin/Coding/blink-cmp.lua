@@ -38,15 +38,18 @@ return {
       nerd_font_variant = "mono",
     },
 
+    fuzzy = {
+      implementation = "rust",
+    },
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "lsp", "buffer", "path", "snippets", "markdown" },
+      default = { "buffer", "lsp", "path", "snippets", "markdown" },
       providers = {
         -- score_offset设置优先级数字越大优先级越高
-        path = { score_offset = 4 },
-        buffer = { score_offset = 3 },
-        lsp = { score_offset = 2 },
+        buffer = { score_offset = 4 },
+        lsp = { score_offset = 3 },
+        path = { score_offset = 2 },
         snippets = { score_offset = 1 },
         markdown = {
           name = "RenderMarkdown",
@@ -55,7 +58,7 @@ return {
         },
       },
     },
-    snippets = { preset = "mini_snippets" },
+    snippets = { preset = "luasnip" },
   },
   opts_extend = { "sources.default" },
 }

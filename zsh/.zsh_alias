@@ -1,9 +1,18 @@
 # alias
 alias md="mkdir -p"
 alias rd="rmdir"
+# ls
 alias ls="ls --color"
 alias ll="ls -l"
 alias la="ls -al"
+# eza
+alias es="eza --icons=always"
+alias el="eza --icons=always -l"
+alias ea="eza --icons=always -al"
+alias et="eza --icons=always -T"
+
+# emacs
+alias ec="emacsclient -nc"
 
 # git
 alias lg="lazygit"

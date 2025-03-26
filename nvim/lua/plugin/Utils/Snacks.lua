@@ -71,6 +71,9 @@ return {
     explorer = { enabled = false },
     indent = { enabled = true },
     input = { enabled = false },
+    image = {
+      enabled = true,
+    },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -86,6 +89,7 @@ return {
         wo = { wrap = true }, -- Wrap notifications
       },
     },
+    profiler = { enabled = true },
   },
   keys = {
     -- Top Pickers & Explorer

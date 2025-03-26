@@ -30,6 +30,8 @@ require("lazy").setup({
     require("plugin.Editor.gitsigns"),
     -- todo-comment
     require("plugin.Editor.todo-comment"),
+    -- telescope
+    -- require("plugin.Editor.telescope"),
     ---========
     ---Coding
     ---========
@@ -47,6 +49,10 @@ require("lazy").setup({
     require("plugin.Coding.linter"),
     -- terminal
     require("plugin.Coding.terminal"),
+    -- debugger
+    -- require("plugin.Coding.dap"),
+    -- snippets
+    require("plugin.Coding.snippets"),
     --========
     --Utils
     --========
@@ -54,6 +60,8 @@ require("lazy").setup({
     require("plugin.Utils.Snacks"),
     -- mini tools
     require("plugin.Utils.mini"),
+    -- go extension for dap
+    -- require("plugin.Utils.go-debug"),
     --========
     --Other
     --========
@@ -62,8 +70,12 @@ require("lazy").setup({
     -- markdown
     require("plugin.Other.markdown"),
     -- flutter
-    require("plugin.Other.flutter"),
+    -- require("plugin.Other.flutter"),
     -- leetcode
     require("plugin.Other.leetcode"),
+    -- LLM
+    -- require("plugin.Other.llm"),
+    -- Org
+    require("plugin.Other.org"),
   },
 })

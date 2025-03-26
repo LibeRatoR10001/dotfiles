@@ -17,8 +17,8 @@ def_key "r"
   toggle_single
 def_key "+"
     volume_up
-def_key "="
-    volume_up
+def_key "-"
+    volume_down
 def_key "i"
   show_song_info
 # search online

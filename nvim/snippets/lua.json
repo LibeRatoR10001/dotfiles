@@ -1,0 +1,15 @@
+{
+	"todo": {
+	  "prefix": "todo",
+	  "body": [
+		"-- TODO: ${0:something} < $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE Atom > "
+	  ],
+	  "description": "todo snippet"
+	},
+	"snip1": {
+		"prefix": "lua",
+		"body": [
+			"lualualua"
+		]
+	}
+}

@@ -4,13 +4,16 @@
   "modules-left": [
     // "wlr/workspaces",
     "hyprland/workspaces",
+    "niri/workspaces",
     // "custom/swhkd",
     // "custom/media",
     // "river/tags",
     // "custom/xbps"
     "tray",
 	"custom/checkupdate",
-    "custom/hyprland-active-window",
+    // "custom/hyprland-active-window",
+	"hyprland/window",
+	"niri/window",
   ],
   "modules-center": [
     "clock",
@@ -43,8 +46,9 @@
   },
   "custom/checkupdate":{
 	"format":"<span color=\"#66ccff\" size='16000'> </span>{}",
-  	"exec": "checkupdates | wc -l",
-  	"interval": 3600
+  	"exec": "~/.local/bin/checkupdates-waybar.sh",
+	"on-click":"~/.local/bin/checkupdates-waybar-notify.sh",
+  	"interval": 1200
   },
   "custom/swhkd": {
     "exec": "cat ~/.config/waybar/swhkd-mode",
@@ -73,9 +77,9 @@
     "on-click": "kitty --class xbps,xbps -e doas xbps-install -Su"
   },
   "custom/weather": {
-    "exec": "curl 'wttr.in/?format=%c%t' &",
-    "interval": 3600,
-    "on-click": "qutebrowser https://wttr.in/",
+    "exec": "~/.local/bin/update-weather-waybar.sh",
+    "interval": 1200,
+    "on-click": "~/.local/bin/update-weather-notify.sh",
     "max-length": 10
   },
   "custom/notification": {
@@ -149,10 +153,34 @@
     },
     "sort-by-number": true
   },
+  "niri/workspaces":{
+    "format": " {icon} ",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "default": "",
+      "focused": ""
+    },
+    "sort-by-number": true
+  },
+  "hyprland/window":{
+  	"format":"{}"
+  },
+  "niri/window":{
+  	"format":"{}"
+  },
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
     "format-disconnected": "Disconnected 󰌸 ",
     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}  Stopped  󰝛 ",
+	"server":"/home/Atom/.config/mpd/socket",
     "title-len": 20,
     "interval": 10,
     "consume-icons": {

@@ -2,8 +2,8 @@
 edit = [
     { run = 'nvim "$@"', block = true },
     { run = 'lvim "$@"', block = true },
+	{ run = 'helix "$@"', block = true },
     { run = 'neovide "$@"', block = true},
-    { run = 'vim "$@"', block = true },
 ]
 play = [
     { run = 'mpv "$@"', orphan = true, for = "unix" },

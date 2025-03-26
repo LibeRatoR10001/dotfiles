@@ -1,0 +1,37 @@
+{
+	"LaTeX - inline math (dollars)": {
+		"prefix": "ii",	
+		"body": [
+			"$$1$ $0"
+		],
+		"description": "Create inline math formula"
+	},
+	"LaTeX - display math (dollars)": {
+		"prefix": "dd", 
+		"body": [
+			"$$ $1 $$$0"
+		],
+		"description": "Create display math formula"
+	},
+	"LaTeX - inline math with display style (dollars)": {
+		"prefix": "id",	
+		"body": [
+			"$\\displaystyle $1$ $0"
+		],
+		"description": "Create inline math formula with display style"
+	},
+	"LaTeX - inline math (brackets)": {
+		"prefix": "II", 
+		"body": [
+			"\\($1\\) $0"
+		],
+		"description": "Create inline math formula"
+	},
+	"LaTeX - display math (brackets)": {
+		"prefix": "DD", 
+		"body": [
+			"\\[$1\\]$0"
+		],
+		"description": "Create display math formula"
+	},
+}

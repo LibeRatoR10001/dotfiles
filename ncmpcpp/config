@@ -23,9 +23,13 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 #
 ##### connection settings #####
 #
-mpd_host = localhost
+# using Unix socket
 #
-mpd_port = 6600
+mpd_host = "~/.config/mpd/socket"
+#
+#mpd_host = localhost
+#
+#mpd_port = 6600
 #
 #mpd_password = ""
 #
