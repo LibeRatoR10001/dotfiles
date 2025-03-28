@@ -6,4 +6,14 @@ return {
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
   opts = {},
+  ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
+  config = function()
+    require("render-markdown").setup({
+      completions = { blink = { enabled = true } },
+      latex = {
+        -- render_modes = true,
+        -- converter = "tectonic",
+      },
+    })
+  end,
 }

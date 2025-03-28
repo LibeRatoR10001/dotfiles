@@ -57,9 +57,94 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "/home/Atom/Org/")
-;;(setq org-agenda-files '("/home/Atom/Org/agenda/"))
+(setq org-directory "/home/Atom/org/")
+(after! org
+  (setq org-agenda-files
+        (list (expand-file-name "inbox.org" org-directory)
+              (expand-file-name "note.org" org-directory)
+              (expand-file-name "projects.org" org-directory)
+              (expand-file-name "schedule.org" org-directory)
+              (expand-file-name "tasks.org" org-directory)
+              )
+        )
+  )
+;; Latex export
+(after! org
+  (setq org-latex-default-packages-alist
+        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+  (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
+                                "xelatex -interaction nonstopmode %f"))
+  (setq org-latex-packages-alist
+        '(("" "ctex" t)))
+  (setq org-latex-hyperref-template
+        "\\hypersetup{linktoc=all,colorlinks=true,urlcolor=blue,linkcolor=blue}")
+  )
+;; last modified
+(after! org
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (setq-local time-stamp-active t
+                          time-stamp-line-limit 18
+                          time-stamp-start "^#\\+last_modified: [ \t]*"
+                          time-stamp-end "$"
+                          time-stamp-format "\[%Y-%m-%d %a %H:%M:%S\]")
+              (add-hook 'before-save-hook 'time-stamp nil 'local))))
+(after! org
+  (setq org-capture-templates
+        '(
+          ;; 1. 待办
+          ("t" "Task" entry
+           (file+headline "~/org/tasks.org" "Todo")
+           "* TODO %?\nDEADLINE: %^T\n"
+           :empty-lines 1)
+          ;; 2. 计划
+          ("s" "Schedule" entry
+           (file+headline "~/org/schedule.org" "Schedule")
+           "* TODO %?\nSCHEDULED: %^T\n"
+           :empty-lines 1)
+          ;; 3. 灵感
+          ("i" "Idea" entry
+           (file+headline "~/org/inbox.org" "Inbox")
+           "* %?\n%T"
+           :empty-lines 1)
+          ;; 4. 快速笔记（链接到 Org-roam）
+          ("n" "Roam Note" entry
+           (file+headline "~/org/note.org" "Quick Notes")
+           "* %?\n%i\n%a"
+           :empty-lines 1)
+
+          ("l" "Templates for projects")
+          ("lt" "Project-local todo" entry  ; {project-root}/todo.org
+           (file+headline +org-capture-project-todo-file "Inbox")
+           "* TODO %?\n%i\n%a" :prepend t)
+          ("ln" "Project-local notes" entry  ; {project-root}/notes.org
+           (file+headline +org-capture-project-notes-file "Inbox")
+           "* %U %?\n%i\n%a" :prepend t)
+          ("lc" "Project-local changelog" entry  ; {project-root}/changelog.org
+           (file+headline +org-capture-project-changelog-file "Unreleased")
+           "* %U %?\n%i\n%a" :prepend t)
+
+          ("p" "Centralized templates for projects")
+          ("pt" "Project todo" entry
+           (function +org-capture-central-project-todo-file)
+           "* TODO %?\n %i\n %a"
+           :heading "Tasks"
+           :prepend nil)
+          ("pn" "Project notes" entry
+           (function +org-capture-central-project-notes-file)
+           "* %U %?\n %i\n %a"
+           :heading "Notes"
+           :prepend t)
+          ("pc" "Project changelog" entry
+           (function +org-capture-central-project-changelog-file)
+           "* %U %?\n %i\n %a"
+           :heading "Changelog"
+           :prepend t)
+          ))
+  )
+
 (after! org-roam
+  (setq org-roam-directory "/home/Atom/org/roam/")
   (setq org-roam-db-gc-threshold most-positive-fixnum)
   )
 (use-package! websocket
@@ -147,22 +232,6 @@
                                         ;(add-hook 'text-mode-hook #'toggle-input-method)
   )
 
-;;(use-package! pyim
-;;  :config
-;;  (setq pyim-default-scheme 'rime)
-;;  (setq pyim-page-tooltip 'posframe)
-;;  ;; 智能切换输入
-;;  (setq-default pyim-english-input-switch-functions
-;;   '(pyim-probe-dynamic-english
-;;     pyim-probe-isearch-mode
-;;     pyim-probe-program-mode
-;;     pyim-probe-evil-normal-mode
-;;     pyim-probe-org-structure-template))
-;;  (setq-default pyim-punctuation-half-width-functions
-;;   '(pyim-probe-punctuation-line-beginning
-;;     pyim-probe-punctuation-after-punctuation)))
-
-
 (defun color-banner ()
   (let* ((banner '("███████╗███╗   ███╗ █████╗  ██████╗███████╗"
 		   "██╔════╝████╗ ████║██╔══██╗██╔════╝██╔════╝"
@@ -192,19 +261,6 @@
                                         ;:config (keycast-log-mode 1)
   )
 
-;; LaTex
-(after! org
-  (setq org-latex-default-packages-alist
-        (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
-  (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
-                                "xelatex -interaction nonstopmode %f"))
-  (setq org-latex-packages-alist
-        '(("" "ctex" t)))
-  (setq org-latex-hyperref-template
-        "\\hypersetup{linktoc=all,colorlinks=true,urlcolor=blue,linkcolor=blue}")
-  )
-(setq org-latex-toc-command "\\tableofcontents \\clearpage\n\n")
-
 (setq +latex-viewers '(pdf-tools))
 ;; xelatex
 ;; (add-hook 'LaTeX-mode-hook
@@ -214,3 +270,18 @@
 ;;             (setq TeX-save-querynil )
 ;;             (setq TeX-show-compilation t)
 ;;             ))
+
+(when (display-graphic-p)
+  (use-package! xenops
+    :hook (latex-mode . xenops-mode)
+    :hook (LaTeX-mode . xenops-mode)
+    :hook (org-mode . xenops-mode)
+    :defer t
+    :config
+    (map! :map xenops-mode-map
+          :n "RET" #'xenops-dwim)
+    (setq xenops-cache-directory (concat doom-cache-dir "xenops/")
+          xenops-reveal-on-entry t
+          xenops-math-latex-process 'dvisvgm
+          xenops-math-image-scale-factor 1.5
+          )))

@@ -20,11 +20,16 @@ return {
   },
   config = function(_, opts)
     local ls = require("luasnip")
+    local expand_auto = ls.expand_auto
+    require("luasnip").expand_auto = function(...)
+      vim.o.undolevels = vim.o.undolevels
+      expand_auto(...)
+    end
     if opts then
       require("luasnip").config.setup(opts)
     end
     vim.tbl_map(function(type)
-      require("luasnip.loaders.from_" .. type).lazy_load()
+      require("luasnip.loaders.from_" .. type).lazy_load({ exclude = "tex" })
     end, { "vscode", "snipmate", "lua" })
     require("luasnip.loaders.from_lua").lazy_load({ paths = "./snippets/lua" })
     vim.keymap.set({ "i" }, "<C-K>", function()
