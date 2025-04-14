@@ -3,6 +3,19 @@ return {
     "nvim-orgmode/orgmode",
     event = "VeryLazy",
     config = function()
+      local Path = require("plenary.path")
+      local function project_root()
+        -- 优先检测 Git
+        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel 2>/dev/null")[1]
+        if git_root ~= "" then
+          return git_root
+        end
+        return vim.fn.getcwd()
+      end
+      local function project_name()
+        local path = project_root()
+        return vim.fn.fnamemodify(path, ":t")
+      end
       require("orgmode").setup({
         org_agenda_files = {
           "~/org/inbox.org",
@@ -40,6 +53,53 @@ return {
             headline = "Quick Notes",
             template = "* %?\n%a",
           },
+          p = {
+            description = "Centralized templates for projects",
+            subtemplates = {
+              t = {
+                description = "Project todo",
+                target = "~/org/projects.org",
+                headline = project_name(),
+                -- regexp = "^\\*\\* Tasks",
+                template = "*** TODO %?\n%a",
+              },
+              n = {
+                description = "Project notes",
+                target = "~/org/projects.org",
+                headline = project_name(),
+                template = "*** Notes %U %?\n%a",
+              },
+              c = {
+                description = "Project changelog",
+                target = "~/org/projects.org",
+                headline = project_name(),
+                template = "*** Change %U %?\n%a",
+              },
+            },
+          },
+          -- l = {
+          --   description = "Templates for projects",
+          --   subtemplates = {
+          --     t = {
+          --       description = "Project-local todo",
+          --       target = project_root() .. "todo.org",
+          --       headline = "Inbox",
+          --       template = "* TODO %?\n%a",
+          --     },
+          --     n = {
+          --       description = "Project-local notes",
+          --       target = project_root() .. "/notes.org",
+          --       headline = "Inbox",
+          --       template = "* %U %?\n%a",
+          --     },
+          --     c = {
+          --       description = "Project-local changelog",
+          --       target = project_root() .. "/changelog.org",
+          --       headline = "Unreleased",
+          --       template = "* %U %?\n%a",
+          --     },
+          --   },
+          -- },
         },
       })
     end,

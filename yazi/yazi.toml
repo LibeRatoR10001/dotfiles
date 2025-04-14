@@ -18,3 +18,13 @@ open = [
 # Change them to your desired values
 max_width  = 10000
 max_height = 10000
+
+[plugin]
+# use magick to preview svg
+  prepend_preloaders = [
+    { mime = "image/svg+xml", run = "magick" },
+  ]
+  prepend_previewers = [
+    { mime = "image/svg+xml", run = "magick"},
+  ]
+

@@ -25,5 +25,13 @@ return {
         "-interaction=nonstopmode",
       },
     }
+    vim.g.vimtex_quickfix_ignore_filters = {
+      "Underfull",
+      "Overfull",
+      "specifier changed to",
+      "Token not allowed in a PDF string",
+      "LaTex Warning: Float too large for page",
+      "contains only floats",
+    }
   end,
 }

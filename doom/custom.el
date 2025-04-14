@@ -76,8 +76,8 @@
       "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command")))
  '(org-agenda-files
-   '("~/Org/roam/20250324131258-ca_pipelining.org" "/home/Atom/Org/notes.org"
-     "/home/Atom/Org/todo.org")))
+   '("/home/Atom/org/notes.org" "/home/Atom/org/tasks.org"
+     "/home/Atom/org/projects.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

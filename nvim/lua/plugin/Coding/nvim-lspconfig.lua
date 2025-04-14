@@ -1,7 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "saghen/blink.cmp",
+    -- "saghen/blink.cmp",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   },
@@ -20,6 +20,7 @@ return {
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
       },
       cmake = {},
+      dotls = {},
       gopls = {
         settings = {
           gopls = {
@@ -33,7 +34,7 @@ return {
           },
         },
       },
-      ltex = {},
+      texlab = {},
       lua_ls = {
         on_init = function(client)
           if client.workspace_folders then

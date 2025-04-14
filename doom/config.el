@@ -60,13 +60,27 @@
 (setq org-directory "/home/Atom/org/")
 (after! org
   (setq org-agenda-files
-        (list (expand-file-name "inbox.org" org-directory)
-              (expand-file-name "note.org" org-directory)
-              (expand-file-name "projects.org" org-directory)
-              (expand-file-name "schedule.org" org-directory)
-              (expand-file-name "tasks.org" org-directory)
-              )
+        (list  "/home/Atom/org/inbox.org"
+               "/home/Atom/org/tasks.org"
+               "/home/Atom/org/schedule.org"
+               "/home/Atom/org/note.org"
+               "/home/Atom/org/projects.org"
+               )
         )
+  (message "org-agenda-files is set to: %s" org-agenda-files)
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "PROG(p)" "WAIT(w)" "|" "DONE(d)" "KILL(k)")
+          (sequence "[ ](T)" "[-](S)" "[?](W)" "|" "[X](D)")
+          (sequence "|" "OKAY(o)" "YES(y)" "NO(n)")))
+  (setq org-todo-keyword-faces
+        '(("[-]" . (:foreground "#66CCFF" :weight bold))
+          ("[?]" . +org-todo-onhold)
+          ("[X]" . (:foreground "#00FFCC" :weight bold-italic))
+          ("TODO" . (:foreground "#EE0000" :weight bold))
+          ("PROG" . (:foreground "#66CCFF" :weight bold))
+          ("WAIT" . (:foreground "#FFFF00" :weight bold))
+          ("DONE" . (:foreground "#00FFCC" :weight bold-italic))
+          ("KILL" . (:background "gray" :foreground "black"))))
   )
 ;; Latex export
 (after! org

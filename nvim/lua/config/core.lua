@@ -60,8 +60,10 @@ if vim.g.neovide then
   vim.g.neovide_light_angle_degrees = 45
   vim.g.neovide_light_radius = 5
   -- 透明度
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_opacity = 0.8
   vim.g.neovide_normal_opacity = 0.8
+  -- 全屏
+  vim.g.neovide_fullscreen = true
 
   -- 刷新率
   vim.g.neovide_refresh_rate = 60
