@@ -23,7 +23,8 @@ require("lazy").setup({
     -- which-key
     require("plugin.Editor.which-key"),
     -- explorer
-    require("plugin.Editor.neo-tree"),
+    -- require("plugin.Editor.neo-tree"),
+    require("plugin.Editor.oil"),
     -- flash
     -- require("plugin.Editor.flash"),
     -- gitsigns
@@ -50,7 +51,7 @@ require("lazy").setup({
     -- terminal
     require("plugin.Coding.terminal"),
     -- debugger
-    -- require("plugin.Coding.dap"),
+    require("plugin.Coding.dap"),
     -- snippets
     require("plugin.Coding.snippets"),
     --========
@@ -70,12 +71,14 @@ require("lazy").setup({
     -- markdown
     require("plugin.Other.markdown"),
     -- flutter
-    -- require("plugin.Other.flutter"),
+    require("plugin.Other.flutter"),
     -- leetcode
     require("plugin.Other.leetcode"),
     -- LLM
     -- require("plugin.Other.llm"),
     -- Org
-    require("plugin.Other.org"),
+    -- require("plugin.Other.org"),
+    -- rust crate
+    require("plugin.Other.rust"),
   },
 })

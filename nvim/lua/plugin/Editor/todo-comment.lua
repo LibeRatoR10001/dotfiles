@@ -2,7 +2,8 @@ return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "TodoTrouble", "TodoTelescope" },
-  event = "VeryLazy",
+  lazy = true,
+  -- event = "VeryLazy",
   opts = {},
   -- stylua: ignore
   keys = {

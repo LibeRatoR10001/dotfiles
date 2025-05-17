@@ -35,3 +35,9 @@ source ~/.zsh_env
 source ~/.zsh_alias
 
 eval "$(starship init zsh)"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/Atom/.dart-cli-completion/zsh-config.zsh ]] && . /home/Atom/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

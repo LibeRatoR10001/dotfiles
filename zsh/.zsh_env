@@ -13,8 +13,9 @@ source <(fzf --zsh)
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/fzfrc"
 
 # Flutter
-export PUB_HOSTED_URL="https://pub.flutter-io.cn"
-export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
+export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export FLUTTER_GIT_URL="https://mirrors.tuna.tsinghua.edu.cn/git/flutter-sdk.git"
 
 # Local LLM
 export LLM_KEY="NONE"
@@ -26,4 +27,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 typeset -U path PATH
 path=(~/.local/bin $path)
 path=(~/.config/emacs/bin $path)
+path=(~/fvm/default/bin $path)
 export PATH
+
+# man page
+export MANPAGER='nvim +Man!'

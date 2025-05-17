@@ -1,5 +1,7 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  -- lazy = true,
+  event = "VeryLazy",
   main = "ibl",
   dependencies = {
     "TheGLander/indent-rainbowline.nvim",

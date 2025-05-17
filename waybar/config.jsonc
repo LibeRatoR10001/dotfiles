@@ -170,12 +170,12 @@
     },
     "sort-by-number": true
   },
-  "hyprland/window":{
-  	"format":"{}"
-  },
-  "niri/window":{
-  	"format":"{}"
-  },
+"hyprland/window":{
+	"format":"{}"
+},
+"niri/window":{
+	"format":"{}"
+},
   "mpd": {
     "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S})  ",
     "format-disconnected": "Disconnected 󰌸 ",

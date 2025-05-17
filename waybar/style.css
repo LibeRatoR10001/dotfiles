@@ -5,7 +5,7 @@
     /* all: unset; */
     font-size: 14px;
     /* font-family: "ComicMonoNF","Maple Mono SC NF"; */
-  font-family: "Hug Me Tight","Maple Mono SC NF";
+  font-family: "Hug Me Tight","Maple Mono NF CN";
 }
 
 window#waybar {

@@ -290,6 +290,7 @@
     :hook (latex-mode . xenops-mode)
     :hook (LaTeX-mode . xenops-mode)
     :hook (org-mode . xenops-mode)
+    :hook (org-roam-mode . xenops-mode)
     :defer t
     :config
     (map! :map xenops-mode-map

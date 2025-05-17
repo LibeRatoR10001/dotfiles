@@ -2,6 +2,7 @@ return {
   "saghen/blink.cmp",
   dependencies = { "rafamadriz/friendly-snippets" },
   version = "*",
+  event = { "InsertEnter", "CmdlineEnter" },
   opts = {
     keymap = {
       preset = "none",
@@ -44,18 +45,32 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "buffer", "lsp", "path", "snippets", "markdown" },
+      default = { "buffer", "lsp", "markdown", "path", "snippets" },
       providers = {
         -- score_offset设置优先级数字越大优先级越高
-        buffer = { score_offset = 4 },
-        lsp = { score_offset = 3 },
+        buffer = { score_offset = 6 },
+        lsp = { score_offset = 5 },
         path = { score_offset = 2 },
         snippets = { score_offset = 1 },
         markdown = {
           name = "RenderMarkdown",
           module = "render-markdown.integ.blink",
           fallbacks = { "lsp" },
+          score_offset = 4,
         },
+        crates = {
+          name = "crates",
+          module = "",
+        },
+        -- cmdline = {
+        --   min_keyword_length = function(ctx)
+        --     -- when typing a command, only show when the keyword is 3 characters or longer
+        --     if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
+        --       return 3
+        --     end
+        --     return 0
+        --   end,
+        -- },
       },
     },
     snippets = { preset = "luasnip" },

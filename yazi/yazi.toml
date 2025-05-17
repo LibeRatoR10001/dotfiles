@@ -28,3 +28,12 @@ max_height = 10000
     { mime = "image/svg+xml", run = "magick"},
   ]
 
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"

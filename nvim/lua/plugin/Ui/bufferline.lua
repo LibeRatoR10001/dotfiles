@@ -1,6 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
-  event = "VeryLazy",
+  event = { "BufAdd", "BufNewFile" },
   version = "*",
   keys = {
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin" },

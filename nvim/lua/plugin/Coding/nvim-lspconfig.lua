@@ -1,10 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    -- "saghen/blink.cmp",
+    { "saghen/blink.cmp", event = { "InsertEnter", "CmdlineEnter" } },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   },
+  event = "BufRead",
   -- example using `opts` for defining servers
   opts = {
     servers = {
@@ -124,21 +125,39 @@ return {
             snippets = "add_parenthesis",
           },
         },
-        -- on_attach = function(client, bufnr)
-        --   vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-        -- end,
+        on_attach = function(client, bufnr)
+          vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        end,
         settings = {
           ["rust-analyzer"] = {
+            cargo = {
+              buildScripts = {
+                enable = true,
+              },
+            },
+            check = {
+              command = "clippy",
+              workspace = true,
+            },
+            completion = {
+              addSemicolonToUnit = true,
+              autoAwait = {
+                enable = true,
+              },
+              autoIter = {
+                enable = true,
+              },
+            },
+            diagnostics = {
+              styleLints = {
+                enable = true,
+              },
+            },
             imports = {
               granularity = {
                 group = "module",
               },
               prefix = "self",
-            },
-            cargo = {
-              buildScripts = {
-                enable = true,
-              },
             },
             procMacro = {
               enable = true,
@@ -154,11 +173,13 @@ return {
         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       end
     end
-    local lspconfig = require("lspconfig")
+    -- local lspconfig = require("lspconfig")
     for server, config in pairs(opts.servers) do
       config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
       config.on_attach = on_attach
-      lspconfig[server].setup(config)
+      -- lspconfig[server].setup(config)
+      vim.lsp.enable(server)
+      vim.lsp.config(server, config)
     end
   end,
 }

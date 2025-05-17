@@ -45,6 +45,13 @@ vim.o.enc = "utf8"
 vim.o.swapfile = true
 vim.o.undofile = true
 
+-- 诊断
+vim.diagnostic.config({
+  virtual_text = true,
+  virtual_lines = { current_line = true },
+})
+-- diff 高亮
+
 -- noevide 配置
 if vim.g.neovide then
   -- 标题栏颜色 only windows
