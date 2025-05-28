@@ -18,13 +18,14 @@
 #: auto on macOS, the priority of bold fonts is semi-bold, bold,
 #: heavy. Setting them manually is useful for font families that have
 #: many weight variants like Book, Medium, Thick, etc. For example::
-
-     font_family      Comic Mono Nerd Font
-     bold_font        Comic Mono Bold Nerd Font Complete
-     italic_font      auto
-     bold_italic_font auto 
-
-     font_size 16.0
+#
+# BEGIN_KITTY_FONTS
+font_family      family="ComicShannsMono Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
+font_size 14.0
 
 #: Font size (in pts)
 
@@ -48,6 +49,10 @@
 
 # symbol_map
 
+# chinese
+symbol_map U+4E00-U+9FA5 Maple Mono NF CN
+# nerd font mono
+symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0-U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6AA,U+E700-U+E7C5,U+EA60-U+EBEB,U+F000-U+F2E0,U+F300-U+F32F,U+F400-U+F4A9,U+F500-U+F8FF,U+F0001-U+F1AF0 Symbols Nerd Font Mono
 #: E.g. symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
 
 #: Map the specified Unicode codepoints to a particular font. Useful
@@ -74,7 +79,7 @@
 
 #:     narrow_symbols codepoints [optionally the number of cells]
 
- disable_ligatures never
+disable_ligatures never
 
 #: Choose how you want to handle multi-character ligatures. The
 #: default is to always render them. You can tell kitty to not render
@@ -95,7 +100,7 @@
 # font_features
 
 #: E.g. font_features none
-font_features ComicMonoNerdFont-Bold -calt
+font_features Monaspace Neon +calt +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +liga
 
 font_render_hinting 2
 font_smoothing true
@@ -303,6 +308,8 @@ font_smoothing true
 
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
+
+cursor_trail 3
 
 #: }}}
 
@@ -822,7 +829,7 @@ font_smoothing true
 #: that setting a non-zero window_margin_width overrides this and
 #: causes all borders to be drawn.
 
-# window_margin_width 0
+# window_margin_width 20
 
 #: The window margin (in pts) (blank area outside the border). A
 #: single value sets all four sides. Two values set the vertical and
@@ -837,7 +844,7 @@ font_smoothing true
 #: set the vertical and horizontal sides. Three values set top,
 #: horizontal and bottom. Four values set top, right, bottom and left.
 
-# window_padding_width 0
+window_padding_width 30
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border). A single value sets all four sides. Two values set
@@ -880,7 +887,7 @@ font_smoothing true
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
+hide_window_decorations yes
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1125,7 +1132,7 @@ font_smoothing true
 #: }}}
 
 #: Color scheme {{{
-
+include themes/mocha.conf
 # foreground #dddddd
 # background #000000
 
@@ -1364,7 +1371,7 @@ font_smoothing true
 #: See rc_custom_auth <https://sw.kovidgoyal.net/kitty/remote-
 #: control/#rc-custom-auth> for details.
 
-# allow_remote_control no
+allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -2479,7 +2486,9 @@ font_smoothing true
 #: }}}
 
 #: }}}
-include themes/mocha.conf
 
 #map ctrl+\ launch --location=vsplit
 map ctrl+shift+w close_window
+
+
+

@@ -11,9 +11,6 @@ alias el="eza --icons=always -l"
 alias ea="eza --icons=always -al"
 alias et="eza --icons=always -T"
 
-# emacs
-alias ec="emacsclient -nc"
-
 # git
 alias lg="lazygit"
 

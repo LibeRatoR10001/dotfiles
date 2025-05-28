@@ -17,8 +17,8 @@
   ],
   "modules-center": [
     "clock",
-    "mpd",
-    // "custom/cava",
+    // "mpd",
+    "custom/cava",
     "memory"
   ],
   "modules-right": [
@@ -199,7 +199,7 @@
       "on": "<span color='#cba6f7'> </span> "
     },
     "state-icons": {
-      "paused": "",
+      "paused": " ",
       "playing": " "
     },
     "on-scroll-up": "mpc seek +1",
@@ -211,8 +211,21 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "custom/cava": {
-    "format": "{}",
-    "exec": "~/scripts/cava-infinite",
+    "format": "{icon}{text}",
+	"format-icons": {
+        // "Playing": " ", // Uncomment if not using caway
+        "Paused": " ",
+        "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
+    },
+	"escape": true,
+    "tooltip": true,
+    "exec": "~/.config/waybar/scripts/caway.sh",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "on-click-right": "g4music",
+    "max-length": 35,
     "exec-if": "playerctl status"
   },
   "memory": {

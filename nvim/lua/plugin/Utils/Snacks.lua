@@ -72,7 +72,7 @@ return {
     indent = { enabled = true },
     input = { enabled = false },
     image = {
-      enabled = true,
+      enabled = false,
     },
     notifier = {
       enabled = true,
@@ -422,7 +422,7 @@ return {
       desc = "Goto Declaration",
     },
     {
-      "gr",
+      "grr",
       function()
         Snacks.picker.lsp_references()
       end,

@@ -185,7 +185,7 @@ tooltip {
   background: linear-gradient(-118deg, @base07 0%, @base05 25%, @base05 50%, @base07 75%, @base07 100%);
   background-size: 200% 300%;
   animation: gradient 4s linear infinite;
-  color: #11111b
+  color: #8839ef
 }
 
 #tray > .passive {

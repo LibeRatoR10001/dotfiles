@@ -41,3 +41,5 @@ eval "$(starship init zsh)"
 [[ -f /home/Atom/.dart-cli-completion/zsh-config.zsh ]] && . /home/Atom/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+# zoxide
+eval "$(zoxide init zsh --cmd z)"

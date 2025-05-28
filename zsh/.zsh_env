@@ -26,7 +26,6 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # PATH
 typeset -U path PATH
 path=(~/.local/bin $path)
-path=(~/.config/emacs/bin $path)
 path=(~/fvm/default/bin $path)
 export PATH
 

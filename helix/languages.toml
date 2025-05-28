@@ -1,12 +1,14 @@
+use-grammars = { only = [ "rust", "c", "cpp", "python", "latex" ] }
+
 #RUST
 [[language]]
 name = "rust"
 auto-format = true
 language-servers = [ "rust-analyzer" ]
+formatter = { command = "rustfmt" }
 
 [language-server.rust-analyzer]
-command = "rustup"
-args = [ "run", "stable", "rust-analyzer" ]
+command = "rust-analyzer"
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -14,14 +16,23 @@ command = "clippy"
 
 
 #C/C++
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format" }
 
-
+[[language]]
+name = "cpp"
+auto-format = true
+formatter = { command = "clang-format" }
 
 
 #Python
 [[language]]
 name = "python"
+auto-format = true
 language-servers = [ "pyright", "ruff" ]
+formatter = { command = "ruff" , args = ["format"] }
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
@@ -29,3 +40,8 @@ typeCheckingMode = "basic"
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
+
+#Latex
+[[language]]
+name = "latex"
+formatter = { command = "tex-fmt" }
