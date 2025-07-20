@@ -28,6 +28,7 @@ return {
         prefix = "// ",
         enabled = true,
       },
+      fvm = true,
       lsp = {
         color = {
           enabled = true,

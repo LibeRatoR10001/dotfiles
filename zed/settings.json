@@ -11,7 +11,7 @@
     "features": {
         "edit_prediction_provider": "zed"
     },
-    "assistant": {
+    "agent": {
         "default_model": {
             "provider": "zed.dev",
             "model": "claude-3-7-sonnet-latest"
@@ -21,7 +21,7 @@
     "theme": {
         "mode": "dark",
         "light": "Catppuccin Latte",
-        "dark": "Tokyo Night Storm"
+        "dark": "Catppuccin Mocha"
     },
     // VIM
     "vim_mode": true,
@@ -237,8 +237,8 @@
                         "enable": "always"
                     }
                 },
-                "checkOnSave": {
-                    // rust-analyzer.check.command (default: "check")
+                "checkOnSave": true,
+                "check": {
                     "command": "clippy"
                 }
             }

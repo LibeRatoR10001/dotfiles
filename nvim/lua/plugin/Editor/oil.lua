@@ -31,7 +31,7 @@ return {
         ["<C-h>"] = false,
         ["<C-t>"] = { "actions.select", opts = { tab = true } },
         ["<C-p>"] = "actions.preview",
-        ["<leader>e"] = { "actions.close", mode = "n" },
+        ["-"] = { "actions.close", mode = "n" },
         ["<C-l>"] = false,
         ["<C-r>"] = "actions.refresh",
         ["<BS>"] = { "actions.parent", mode = "n" },

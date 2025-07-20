@@ -27,4 +27,6 @@ function yy() {
 # astronvim
 alias astronvim="NVIM_APPNAME=astronvim nvim"
 
+# niri
+source ~/.config/niri/zsh_completion
 

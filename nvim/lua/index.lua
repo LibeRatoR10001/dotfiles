@@ -7,6 +7,8 @@ require("lazy").setup({
     require("plugin.Ui.colortheme"),
     -- lualine状态栏
     require("plugin.Ui.lualine"),
+    -- backet rainbow
+    require("plugin.Ui.backet"),
     -- indent rainbow
     require("plugin.Ui.indent"),
     -- bufferline
@@ -25,6 +27,7 @@ require("lazy").setup({
     -- explorer
     -- require("plugin.Editor.neo-tree"),
     require("plugin.Editor.oil"),
+    require("plugin.Editor.yazi"),
     -- flash
     -- require("plugin.Editor.flash"),
     -- gitsigns

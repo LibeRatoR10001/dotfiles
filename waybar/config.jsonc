@@ -248,7 +248,7 @@
   "clock": {
     "format": "<span foreground='#cba6f7'>  </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "kitty --class=clock,clock --title=clock -o remember_window_size=no -o initial_window_width=600 -o initial_window_height=200 -e tty-clock -s -c -C 5"
+    "on-click": "day=$(cal);notify-send \"date\" \"$day\" "
   },
   "battery": {
     "states": {

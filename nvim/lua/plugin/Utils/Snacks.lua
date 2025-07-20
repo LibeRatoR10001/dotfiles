@@ -63,7 +63,13 @@ return {
     dashboard = {
       enabled = true,
       sections = {
-        neovim_ascii_section(logo, "big"),
+        -- neovim_ascii_section(logo, "big"),
+        {
+          section = "terminal",
+          cmd = "chafa ~/Pictures/neovim-mark.png --format symbols --symbols vhalf --size 24x15 --stretch ;sleep .1",
+          height = 15,
+          indent = 18,
+        },
         { section = "keys", gap = 1, padding = 1 },
         { section = "startup" },
       },
@@ -72,7 +78,7 @@ return {
     indent = { enabled = true },
     input = { enabled = false },
     image = {
-      enabled = false,
+      enabled = true,
     },
     notifier = {
       enabled = true,

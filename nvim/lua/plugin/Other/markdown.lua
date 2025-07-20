@@ -33,6 +33,9 @@ return {
     local horizontal_rules_presets = require("markview.presets").horizontal_rules
     local tables_presets = require("markview.presets").tables
     require("markview").setup({
+      latex = {
+        enable = false,
+      },
       markdown = {
         headings = headings_presets.simple,
         horizontal_rules = horizontal_rules_presets.double,

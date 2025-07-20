@@ -1,7 +1,7 @@
 -- 开启左侧数字
 vim.o.number = true
 -- 始终隐藏字符（不依赖语法高亮）,在 Markdown 文件中，粗体、斜体等标记字符可能会被隐藏
-vim.opt.conceallevel = 2
+vim.o.conceallevel = 2
 -- 使用相对数
 vim.o.relativenumber = true
 -- 高亮当前行
@@ -35,21 +35,17 @@ vim.o.mouse = "a"
 -- 开启颜色
 vim.o.termguicolors = true
 -- 将updatetime设置为较低的值以提高性能
-vim.opt.updatetime = 200
-
+vim.o.updatetime = 200
 -- 设置编码格式
 vim.o.fileencodings = "utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1"
 vim.o.enc = "utf8"
+-- 设置stack形式的jumplist
+vim.o.jumpoptions = "stack"
 
 -- 保存修改历史
 vim.o.swapfile = true
 vim.o.undofile = true
 
--- 诊断
-vim.diagnostic.config({
-  virtual_text = true,
-  virtual_lines = { current_line = true },
-})
 -- diff 高亮
 
 -- noevide 配置

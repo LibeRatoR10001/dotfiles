@@ -2,15 +2,18 @@
 source /usr/share/zinit/zinit.zsh
 
 # plugin
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zdharma-continuum/fast-syntax-highlighting
+# zinit light zdharma-continuum/fast-syntax-highlighting
+# zinit light zsh-users/zsh-autosuggestions
 zinit light hlissner/zsh-autopair
+# zinit light zsh-users/zsh-completions
 
-# oh-my-zsh plugin
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
-
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -23,13 +26,9 @@ bindkey -e
 zstyle :compinstall filename '/home/Atom/.zshrc'
 
 # autocompletions
-zinit light zsh-users/zsh-completions
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# environment
-source ~/.zsh_env
 
 # alias
 source ~/.zsh_alias

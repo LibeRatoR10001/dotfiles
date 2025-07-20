@@ -17,6 +17,8 @@ require("config.core")
 require("config.keymap")
 -- autocmd
 require("config.autocmd")
+-- lsp
+require("config.lsp")
 -- lazy
 require("config.lazynvim")
 require("index")

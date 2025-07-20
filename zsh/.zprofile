@@ -1,3 +1,6 @@
+# environment
+source ~/.zsh_env
+
 # THEMEs
 export GTK_THEME=Adwaita-dark
 
